@@ -29,10 +29,10 @@ class BasePage:
     def go_to_url(self, url):
         self.driver.get(url)
 
-    # Прокручиваем страницу до выбранного элемента
+    # Прокручиваем страницу до выбранного элемента и ждем пока все прогрузится
     def scroll_to_element(self, locator):
-        element = self.find_element_with_wait(locator)
-        self.driver.execute_script('arguments[0].scrollIntoView();', element)
+        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element_with_wait(locator))
+        self.find_element_with_wait(locator)
 
     # Прокручиваем страницу до конца
     def scroll_down(self):

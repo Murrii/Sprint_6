@@ -6,10 +6,8 @@ import locators.order_page_locators as locators
 import random
 
 class OrderPage(BasePage):
-    @allure.step('Открываем страницу заказа нажатием на {init_order_button}')
+    @allure.step('Открываем страницу заказа нажатием на верхнюю/нижнюю кнопку "Заказать"')
     def open_order_page(self,init_order_button):
-        # открыли главную страницу
-        self.go_to_url(url)
         # прокрутили страницу до элемента
         self.scroll_to_element(init_order_button)
         # нажали на полученную кнопку инициации оформления заказа

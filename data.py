@@ -10,8 +10,11 @@ answers_text = {
     7: 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
 }
 
-# Адрес сайта для проверки
+# Адрес главной страницы
 main_page_url = 'https://qa-scooter.praktikum-services.ru/'
+
+# Адрес страницы заказа
+order_page_url = "https://qa-scooter.praktikum-services.ru/order"
 
 # наборы данных для создания заказа
 order_from_ivan= {

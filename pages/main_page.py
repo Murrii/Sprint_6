@@ -5,10 +5,6 @@ from data import main_page_url as url
 
 
 class MainPage(BasePage):
-    @allure.step('Открываем Главную страницу')
-    def open_main_page(self):
-        self.driver.get(url)
-
     @allure.step('Кликаем на вопрос {num}')
     def click_to_question(self, num):
         final_question_locator = self.format_locator(locators.question_locator, num)
@@ -23,6 +19,11 @@ class MainPage(BasePage):
     def scroll_to_down(self):
         self.scroll_down()
         self.find_element_with_wait(locators.scroll_locator)
+
+    @allure.step("Получаем текст вопроса (проверяем, что мы на Главной странице)")
+    def get_text_from_last_question(self):
+        self.scroll_down()
+        return self.get_text_from_element(locators.scroll_locator)
 
     # статический метод для форматирования локаторов
     @staticmethod
